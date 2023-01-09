@@ -1,4 +1,4 @@
-function createHTML (){
+function createHTML (data){
     return `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -9,8 +9,22 @@ function createHTML (){
     </head>
     <body>
         <div id="page-header">
-            <h1> My Team </h1>
+            <h1> Our Team </h1>
         </div>
+        <section>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+            <div class="card">
+            </div>
+
         
     </body>
     </html>`
