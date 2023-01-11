@@ -5,26 +5,25 @@ const Intern = require('./class-lib/Intern');
 const Engineer = require('./class-lib/Engineer');
 const Manager = require('./class-lib/Manager');
 const createHTML = require('./src/htmlLayOut');
-const data = []
+const array = []
 function questionInitiallizer (){
 const questionInit = [
     {type: 'list',
     message: 'Select a company role.',
-    choices: ["Employee", "Intern", "Engineer", "Manager"],
-    default: "Employee",
+    choices: [ "Intern", "Engineer", "Manager"],
+    default: "Intern",
     name: 'role',
 }];
 
 inquirer
 .prompt(questionInit).then((initData)=>{
-    data.push(initData.role);
-    if (initData.role = "Employee"){
-        employeePrompt(initData.role);
-    } else if (initData.role = "Intern"){
+    console.log(initData);
+    array.push(initData.role);
+    if (initData.role === "Intern"){
         internPrompt(initData.role);
-    } else if (initData.role = "Engineer"){
+    } else if (initData.role === "Engineer"){
         engineerPrompt(initData.role);
-    } else if (initData.role = "Manager"){
+    } else if (initData.role === "Manager"){
         managerPrompt(initData.role);
     }
 })
@@ -53,30 +52,32 @@ const questions = [{
     message: 'What is your Email?',
     name: 'email'
 }];
-function employeePrompt(role){
-    inquirer
-    .prompt(concat(questions,nextEmployeeQuestion)).then((data)=>{
-        const nextEmployee = data.continueq;
-        const name = data.name;
-        const id = data.id;
-        const email = data.email;
-        const addition = new Employee(name,id,email,role);
-        console.log("Success!","Addition added");
-        data.push(addition);
-        if(nextEmployee=== "yes"){
-            questionInitiallizer();
-        } else {
-            createHTML(data);
-        }
-    })
-}
+// function employeePrompt(role){
+//     const employeeQuestions = questions.concat(nextEmployeeQuestion);
+//     inquirer
+//     .prompt(employeeQuestions).then((data)=>{
+        
+//         const nextEmployee = data.continueq;
+//         const name = data.name;
+//         const id = data.id;
+//         const email = data.email;
+//         const addition = new Employee(name,id,email,role);
+//         console.log("Success!","Addition added");
+//         data.push(addition);
+//         if(nextEmployee=== "yes"){
+//             questionInitiallizer();
+//         } else {
+//             createHTML(data);
+//         }
+//     })
+// }
 function internPrompt(role){
     const iQuestions = [{
         type: 'input',
         message: 'What School are you from?',
         name: 'school'
     },]
-    const internQuestions = concat(questions, iQuestions, nextEmployeeQuestion);
+    const internQuestions = questions.concat(iQuestions, nextEmployeeQuestion);
     inquirer
     .prompt(internQuestions).then((data)=>{
         const nextEmployee = data.continueq;
@@ -84,9 +85,12 @@ function internPrompt(role){
         const id = data.id;
         const email = data.email;
         const school = data.school;
+        console.log(data,"__");
         const addition = new Intern(name,id,email,school,role);
         console.log("Success!","Addition added");
-        data.push(addition);
+        console.log(addition);
+        array.push(addition);
+        console.log(array);
         if(nextEmployee=== "yes"){
             questionInitiallizer();
         } else {
@@ -95,12 +99,12 @@ function internPrompt(role){
     })
 }
 function engineerPrompt(role){
-    const iQuestions = [{
+    const eQuestions = [{
         type: 'input',
         message: 'What is your GitHub?',
         name: 'github'
     },]
-    const engineerQuestions = concat(questions, iQuestions, nextEmployeeQuestion);
+    const engineerQuestions = questions.concat(eQuestions, nextEmployeeQuestion);
     inquirer
     .prompt(engineerQuestions).then((data)=>{
         const nextEmployee = data.continueq;
@@ -110,7 +114,8 @@ function engineerPrompt(role){
         const github = data.github;
         const addition = new Engineer(name,id,email,github,role);
         console.log("Success!","Addition added");
-        data.push(addition);
+        array.push(addition);
+        console.log(array);
         if(nextEmployee=== "yes"){
             questionInitiallizer();
         } else {
@@ -119,12 +124,12 @@ function engineerPrompt(role){
     })
 }
 function managerPrompt(role){
-    const iQuestions = [{
+    const mQuestions = [{
         type: 'input',
         message: 'What is your Office Number?',
         name: 'officeNumber'
     },]
-    const managerQuestions = concat(questions, iQuestions, nextEmployeeQuestion);
+    const managerQuestions = questions.concat(mQuestions, nextEmployeeQuestion);
     inquirer
     .prompt(managerQuestions).then((data)=>{
         const nextEmployee = data.continueq;
@@ -134,7 +139,7 @@ function managerPrompt(role){
         const officeNumber = data.officeNumber;
         const addition = new Manager(name,id,email,officeNumber,role);
         console.log("Success!","Addition added");
-        data.push(addition);
+        array.push(addition);
         if(nextEmployee=== "yes"){
             questionInitiallizer();
         } else {

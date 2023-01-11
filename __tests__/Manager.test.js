@@ -29,9 +29,12 @@ describe('Email', ()=>{
 
 describe('officeNumber', ()=>{
     it('Should consist of numbers.', ()=>{
-        expect(new Manager ('Joe').officeNumber).toBe(!isNaN);
+        const value = 123;
+        const e = new Manager ("Joe", 123, "email@email.com", value)
+        expect((e).getOfficeNumber()).toBe(value);
     });
 });
+
 
 describe('getRole()', ()=>{
     it('Should match the class name for role type', ()=>{

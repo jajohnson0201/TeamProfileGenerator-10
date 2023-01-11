@@ -29,7 +29,7 @@ describe('Email', ()=>{
 
 describe('GitHub', ()=>{
     it('Should return user github username.', ()=>{
-        expect(new Engineer ('Joe').getGitub()).toBe('jajohnson0201');
+        expect(new Engineer ('Joe').getGitHub()).toBe('jajohnson0201');
     });
     it('Should be a username at least.', ()=>{
         expect(new Engineer ('Joe').github).toBe('jajohnson0201');
