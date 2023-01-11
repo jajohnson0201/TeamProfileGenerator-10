@@ -2,42 +2,59 @@ const Engineer = require('../class-lib/Engineer')
 
 describe('Name', () => {
     it('Should consist of letters.',()=>{
-        expect(new Engineer ('Joe').name).toBe('Joe');
+        const name = "Joe";
+        const e = new Engineer(name,123,"email@email.com", "github");
+        expect(e.name).toBe(name);
     });
     it('Should return the name provided.',()=>{
-        expect(new Engineer ('Joe').getName()).toBe('Joe');
+        const name = "Joe";
+        const e = new Engineer(name,123,"email@email.com", "github");
+        expect(e.getName()).toBe(name);
     });
 });
 
 describe('ID', ()=>{
     it('Should consist of Numbers.',()=>{
-        expect(new Engineer ('Joe').id).toBe(!isNaN);
+        const id = 123;
+        const e = new Engineer("Joe",id,"email@email.com", "github");
+        expect(e.id).toBe(id);
     });
     it('Should return the ID # provided.',()=>{
-        expect(new Engineer ('Joe').getID()).toBe('Joe');
+        const id = 123;
+        const e = new Engineer("Joe",id,"email@email.com", "github");
+        expect(e.getID()).toBe(id);
     });
 });
 
 describe('Email', ()=>{
     it('Should have an email input.',()=>{
-        expect(new Engineer ('Joe').email).toBe("jajohnson0201@gmail.com");
+        const email = "email@email.com";
+        const e = new Engineer("Joe",123,email, "github");
+        expect(e.email).toBe(email);
     });
     it('Should return the email provided.',()=>{
-        expect(new Engineer ('Joe').getEmail()).toBe('Joe');
+        const email = "email@email.com";
+        const e = new Engineer("Joe",123,email, "github");
+        expect(e.getEmail()).toBe(email);
     });
 });
 
 describe('GitHub', ()=>{
     it('Should return user github username.', ()=>{
-        expect(new Engineer ('Joe').getGitHub()).toBe('jajohnson0201');
+        const github = "github";
+        const e = new Engineer("Joe",123,"email@email.com", github);
+        expect(e.getGitHub()).toBe(github);
     });
     it('Should be a username at least.', ()=>{
-        expect(new Engineer ('Joe').github).toBe('jajohnson0201');
+        const github = "github";
+        const e = new Engineer("Joe",123,"email@email.com", github);
+        expect(e.github).toBe(github);
     });
 });
 
 describe('getRole()', ()=>{
     it('Should match the class name for role type', ()=>{
-        expect(new Engineer ('Joe').getRole().toBe("Engineer"))
+        const e = new Engineer("Joe",123,"email@email.com", "github");
+        expect(e.getRole()).toBe("Engineer")
     })
 });

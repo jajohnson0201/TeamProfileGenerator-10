@@ -2,42 +2,60 @@ const Intern = require('../class-lib/Intern')
 
 describe('Name', () => {
     it('Should consist of letters.',()=>{
-        expect(new Intern ('Joe').name).toBe('Joe');
+        const name = "Joe";
+        const e = new Intern(name, 123, "email@email.com", "school");
+        expect(e.name).toBe(name);
     });
     it('Should return the name provided.',()=>{
-        expect(new Intern ('Joe').getName()).toBe('Joe');
+        const name = "Joe";
+        const e = new Intern(name, 123, "email@email.com", "school");
+        expect(e.getName()).toBe(name);
     });
 });
 
 describe('ID', ()=>{
     it('Should consist of Numbers.',()=>{
-        expect(new Intern ('Joe').id).toBe(!isNaN);
+        const id = 123;
+        const e = new Intern("Joe", id, "email@email.com", "school");
+        expect(e.id).toBe(id);
     });
     it('Should return the ID # provided.',()=>{
-        expect(new Intern ('Joe').getID()).toBe('Joe');
+        const id = 123;
+        const e = new Intern("Joe", id, "email@email.com", "school");
+        expect(e.getID()).toBe(id);
     });
 });
 
 describe('Email', ()=>{
     it('Should have an email input.',()=>{
-        expect(new Intern ('Joe').email).toBe("jajohnson0201@gmail.com");
+        const email = "email@email.com";
+        const e = new Intern("Joe", 123, email, "school");
+        expect(e.email).toBe(email);
     });
     it('Should return the email provided.',()=>{
-        expect(new Intern ('Joe').getEmail()).toBe('Joe');
+        const email = "email@email.com";
+        const e = new Intern("Joe", 123, email, "school");
+        expect(e.getEmail()).toBe(email);
     });
 });
 
 describe('School', ()=>{
     it('Should consist of letters.', ()=>{
-        expect(new Intern ('Joe').school).toBe("UofM");
+        const school = "school";
+        const e = new Intern("Joe", 123, "email@email.com", school);
+        expect(e.school).toBe(school);
     });
     it('Should consist of letters.', ()=>{
-        expect(new Intern ('Joe').getSchool()).toBe("UofM");
+        const school = "school";
+        const e = new Intern("Joe", 123, "email@email.com", school);
+        expect(e.getSchool()).toBe(school);
     });
 });
 
 describe('getRole()', ()=>{
     it('Should match the class name for role type', ()=>{
-        expect(new Intern ('Joe').getRole().toBe("Intern"))
+        const e = new Intern("Joe", 123, "email@email.com", 'school');
+
+        expect(e.getRole()).toBe("Intern");
     })
 });

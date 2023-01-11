@@ -2,28 +2,40 @@ const Manager = require('../class-lib/Manager')
 
 describe('Name', () => {
     it('Should consist of letters.',()=>{
-        expect(new Manager ('Joe').name).toBe('Joe');
+        const name = "Joe";
+        const e = new Manager (name, 123, "email@email.com", 123);
+        expect(e.getName()).toBe(name);
     });
     it('Should return the name provided.',()=>{
-        expect(new Manager ('Joe').getName()).toBe('Joe');
+        const name = "Joe";
+        const e = new Manager (name, 123, "email@email.com", 123);
+        expect(e.name).toBe(name);
     });
 });
 
 describe('ID', ()=>{
     it('Should consist of Numbers.',()=>{
-        expect(new Manager ('Joe').id).toBe(!isNaN);
+        const id = 123;
+        const e = new Manager ("Joe", id, "email@email.com", 123);
+        expect(e.id).toBe(id);
     });
     it('Should return the ID # provided.',()=>{
-        expect(new Manager ('Joe').getID()).toBe('Joe');
+        const id = 123;
+        const e = new Manager ("Joe", id, "email@email.com", 123);
+        expect(e.getID()).toBe(id);
     });
 });
 
 describe('Email', ()=>{
     it('Should have an email input.',()=>{
-        expect(new Manager ('Joe').email).toBe("jajohnson0201@gmail.com");
+        const email = "email@email.com";
+        const e = new Manager ("Joe", 123, email, 123);
+        expect(e.email).toBe(email);
     });
     it('Should return the email provided.',()=>{
-        expect(new Manager ('Joe').getEmail()).toBe('Joe');
+        const email = "email@email.com";
+        const e = new Manager ("Joe", 123, email, 123);
+        expect(e.getEmail()).toBe(email);
     });
 });
 
@@ -31,13 +43,15 @@ describe('officeNumber', ()=>{
     it('Should consist of numbers.', ()=>{
         const value = 123;
         const e = new Manager ("Joe", 123, "email@email.com", value)
-        expect((e).getOfficeNumber()).toBe(value);
+        expect(e.getOfficeNumber()).toBe(value);
     });
 });
 
 
 describe('getRole()', ()=>{
     it('Should match the class name for role type', ()=>{
-        expect(new Manager ('Joe').getRole().toBe("Manager"))
+        const role = "Manager";
+        const e = new Manager ("Joe", 123, "email@email.com", 123);
+        expect(e.getRole()).toBe(role)
     })
 });
