@@ -19,32 +19,32 @@ function cardCreate(data) {
         }
         else if (data[i].role === "Engineer") {
             cards += ` 
-                        <div class="card">
-                            <div class="card-header">
-                                <h2>${data[i].name}</h2>
-                                <h2>${data[i].role}</h2>
-                            </div>
-                            <div class="card-info">
-                                <h3>ID: ${data[i].id}</h3>
-                                <h3>EMAIL: ${data[i].email}</h3>
-                                <h3>GitHub: ${data[i].github}</h3>
-                            </div>
-                        </div>
+            <div class="card">
+                <div class="card-header">
+                     <h2>${data[i].name}</h2>
+                     <h2>${data[i].role}</h2>
+                 </div>
+                <div class="card-info">
+                     <h3>ID: ${data[i].id}</h3>
+                     <h3>EMAIL: ${data[i].email}</h3>
+                     <h3>GitHub: ${data[i].github}</h3>
+                 </div>
+            </div>
                             `;
         }
         else if (data[i].role === "Manager") {
             cards += ` 
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <h2>${data[i].name}</h2>
-                                            <h2>${data[i].role}</h2>
-                                        </div>
-                                        <div class="card-info">
-                                            <h3>ID: ${data[i].id}</h3>
-                                            <h3>EMAIL: ${data[i].email}</h3>
-                                            <h3>Office #: ${data[i].officeNumber}</h3>
-                                        </div>
-                                    </div>
+             <div class="card">
+                 <div class="card-header">
+                     <h2>${data[i].name}</h2>
+                     <h2>${data[i].role}</h2>
+                 </div>
+                <div class="card-info">
+                     <h3>ID: ${data[i].id}</h3>
+                     <h3>EMAIL: ${data[i].email}</h3>
+                     <h3>Office #: ${data[i].officeNumber}</h3>
+                </div>
+            </div>
                                         `;
         }
     }

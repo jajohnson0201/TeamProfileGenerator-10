@@ -67,7 +67,9 @@ function internPrompt(role){
         const school = data.school;
         const addition = new Intern(name,id,email,role,school);
         console.log("Success!","Addition added");
+        
         array.push(addition);
+        console.log(array);
         if(nextEmployee=== "yes"){
             questionInitiallizer();
         } else {
