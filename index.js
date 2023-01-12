@@ -69,7 +69,7 @@ function internPrompt(role){
         console.log("Success!","Addition added");
         
         array.push(addition);
-        console.log(array);
+        
         if(nextEmployee=== "yes"){
             questionInitiallizer();
         } else {
@@ -96,7 +96,7 @@ function engineerPrompt(role){
         const addition = new Engineer(name,id,email,role,github);
         console.log("Success!","Addition added");
         array.push(addition);
-        console.log(array);
+        
         if(nextEmployee=== "yes"){
             questionInitiallizer();
         } else {
