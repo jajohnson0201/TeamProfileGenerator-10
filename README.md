@@ -1,4 +1,5 @@
 # TeamProfileGenerator-10 
+![Screenshot 2023-02-16 230116](https://user-images.githubusercontent.com/115191212/219553691-a82b92f6-bdb6-4e9a-8ce4-e0e10a0a11a5.jpg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
